@@ -7,8 +7,9 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class UserDto {
+public class WalletDTO {
     private int id;
-    private String name;
-    private double bitcoins;
+    private String username;
+    private int coinId;
+    private double amount;
 }

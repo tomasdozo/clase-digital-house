@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CryptoCurrencies {
+public class CryptoCurrenciesController {
 
     @GetMapping("/crypto/{id}")
     public ResponseEntity<CryptoValueDTO> getUser(@PathVariable int id) {
