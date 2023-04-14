@@ -1,0 +1,34 @@
+services:
+  wallet:
+    image: wallet
+    build: ./wallet/
+    container_name: Billetera
+    depends_on: 
+      - eureka-server
+    ports:
+      - "8001:8001"
+    networks:
+      - backend
+
+  cryptocurrencies:
+    image: cryptocurrencies
+    build: ./cryptocurrencies/
+    container_name: CryptoMonedas
+    ports:
+      - "8002:8002"
+    depends_on: 
+      - eureka-server
+    networks:
+      - backend
+
+  eureka-server:
+    image: eureka-server
+    build: ./eureka-server/
+    container_name: ServidorEureka
+    ports:
+      - "8761:8761"
+    networks:
+      - backend
+   
+networks:
+  backend:
